@@ -9,7 +9,7 @@
     <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css">
     <link rel="icon" href="../static/images/icon.png" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="static/scripts/2-hbnb.js?cache_id={{ cache_id }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/2-hbnb.js') }}?cache_id={{ cache_id }}"></script>
     <title>HBnB</title>
   </head>
   <body>
@@ -45,7 +45,7 @@
 	      {% for amenity in amenities %}
 	      <li>
 		{{ amenity.name }}
-		<input type="checkbox" data-id=":amenity_id" data-name=":amenity_name">
+		<input type="checkbox" data-id="{{ amenity_id }}" data-name="{{ amenity_name }}">
 	      </li>
 	      {% endfor %}
 	    </ul>
